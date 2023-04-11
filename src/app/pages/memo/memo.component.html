@@ -1,0 +1,22 @@
+<body>
+    <main>
+        <div class="contenedor">
+            <div class="contenedor__textos">
+                <h1 class="contenedor__textos--titulo">MEMO</h1>
+                <h3 class="contenedor__textos--info">Score:{{hits}}</h3>
+                <h3 class="contenedor__textos--info">Attempts:{{attempts}}</h3>
+            </div>
+            <div class="contenedor__divPadre">
+                <div *ngFor="let card of cardArray" class="contenedor__divPadre--hijo">
+                    <img *ngIf="card.selected" src="{{card.img}}" alt="{{card.id}}">
+                    <img *ngIf="card.checked" src="/assets/tick.svg" alt="'tick'">
+                    <img (click)="turnCard(card)" *ngIf="!card.selected && !card.checked" src="/assets/universe.svg" alt="'universe'">
+                </div>
+            </div>
+            <div class="contenedor__button">
+                <button class="contenedor__button--boton" (click)="reset()">RESET</button>
+            </div>
+        </div>
+    </main>
+</body>
+

@@ -1,0 +1,33 @@
+<body>
+    <main>
+        <div class="divPadre">
+            <div class="divPadre__textos">
+                <h1 class="divPadre__textos--titulo">WHACK A MOLE!</h1>
+                <div class="divPadre__textos--datos">
+                    <div>
+                        <h2 class="divPadre__textos--T">Your score:</h2>
+                        <h2 class="divPadre__textos--dato" data-function="score">{{score}}</h2>
+                    </div>
+                    <div>
+                        <h2 class="divPadre__textos--T">Seconds left:</h2>
+                        <h2 class="divPadre__textos--dato" data-function="time-left">{{timer}}</h2>
+                    </div>
+                </div>
+                <button class="divPadre__textos--button" (click)="startGame()" *ngIf="!gameActive">START</button>
+                <button class="divPadre__textos--button" (click)="resetGame()" *ngIf="gameActive">RESTART</button>
+            </div>
+            <div class="divPadre__tablero">
+                <div (click)="golpe($event)" [ngClass]="position == 0 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 1 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 2 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 3 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 4 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 5 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 6 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 7 ? 'b-mole' : 'b-square'" data-function="square"></div>
+                <div (click)="golpe($event)" [ngClass]="position == 8 ? 'b-mole' : 'b-square'" data-function="square"></div>
+            </div>
+        </div>
+    </main>
+</body>
+

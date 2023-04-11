@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    a:link, a:visited, a:active {
+        text-decoration: none;
+    }
+    font-family: 'Press Start 2P', cursive;   
+}
+

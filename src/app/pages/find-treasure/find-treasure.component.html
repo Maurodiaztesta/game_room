@@ -1,0 +1,31 @@
+<body>
+    <main>
+        <div class="divPadre">
+            <div class="divPadre__textos">
+                <h1 class="divPadre__textos--titulo">FIND THE TREASURE</h1>
+                <h2 class="divPadre__textos--intentos">Attemps: {{attempts}}</h2>
+            </div>
+            <div class="divPadre__inputs">
+                <input class="divPadre__inputs--input" [(ngModel)]="rows" type="number" placeholder="Rows">
+                <input class="divPadre__inputs--input" [(ngModel)]="columns" type="number" placeholder="Columns">
+                <button class="divPadre__inputs--boton" (click)="drawTable()">ADD</button>
+            </div>
+            <div class="divPadre__tabla" *ngIf="table">
+                <table>
+                    <tbody data-function="board">
+                        <tr *ngFor="let row of rowsArray; let i = index">
+                            <td *ngFor="let column of columnsArray; let j = index">
+                                <div><img class="divPadre__tabla--img" [src]="img[i][j]" (click)="changeImg(i, j); attemptsCounter()"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="divPadre__reset">
+                <button class="divPadre__reset--boton" (click)="reset()">RESET</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+
